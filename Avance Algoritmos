@@ -140,17 +140,17 @@ int CountStrongerPairs(int[] powerLevels)
             {
                   if(powerLevels[i] > powerLevels[j]) // +N acceso, +1 comparacion, +N acceso
                   {
-                        count++; // +2 asignacion e incremento
+                        count++; // +N incremento
                   }
             }
       }
       return count; // +1  llamada simple
 }
 
-T(N) = for INTERNO: N*(2+N+1+N+1+N+1+N) = N*(4N+5) = 4N^2+5N
-     = for EXTERNO: 1+N+1+N+1+1+4N^2+5N
-     = 11N^2+4
-O(N^2) = N^2
+T(N) = for INTERNO: N*(N+N+1+N+1+N+1+N) = N*(5N+3) = 5N^2+3N
+     = for EXTERNO: 1+1+N+1+N+1+5N^2+3N
+     = 10N^2+4
+O(N) = N^2
 
 
 
