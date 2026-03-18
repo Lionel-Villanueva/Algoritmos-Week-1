@@ -21,7 +21,7 @@ T(N)= 1+1+N+1+N+2+N+1
 O(N)= N
 
 Ejercicio 2:
-// Entrada O(N)
+// Entrada O(N^2)
 void ComparePlayers(List<GameObjects>players)
 {
     // +1 por asignacion, +(N+1) Comparaciones, +N incrementos
@@ -42,7 +42,7 @@ T(N)= for INTERNO: 1+N+1+1+1+N+1+N+1+N = 4N+6 = N(4N+6) = 4N^2+6N
 O(N)= N^2
 
 Ejecicio 3:
-//Entrada O(N)
+//Entrada O(N^2)
 int CalculateInteractionsScore(int[] players)
 {
     // +1 por asignacion
@@ -63,8 +63,94 @@ int CalculateInteractionsScore(int[] players)
     return score;
 }
 
-Ejercicio 4:
+T(N) = for Interno: N*(2+1+1+N+1+N+1+N+1+N+1+N) = N*(5N+8) = 5N^2+8N = 13N^2
+     = suma for Externo: 1+1+N+1+N+13N^2 = 15N^2+3
+O(N) = N^2
 
+Ejercicio 4:
+//Entrada O(1)
+int CalculateFinalDamage(int attack, int defense, float multiplier)
+{
+      // +1 asignacion, +1 operacion
+      int baseDamage = attack - defense;
+      int finalDamage = (int)(baseDamage * multiplier); // +1 asignacion, +1 operacion
+
+      if (finalDamage < 0) // +1 comparacion
+      {
+            finalDamage = 0; // +1 asignacion
+      }
+      return finalDamage; // +1 llamada simple
+}
+
+T(N) = 1+1+1+1+1+1+1
+     = 7
+O(N) = 1
+
+Ejercicio 5:
+// O(1)
+bool CanCastSpell(int mana, int cost)
+{
+      // +1 asignacion, +1 operacion
+      int remainingMana = mana - cost;
+      if (remainingMana >= 0) // +1 comparacion
+      {
+            Debug.Log("Spell casted"); // +1 llamada simple
+            return true; // +1 llamada simple
+      }
+      return false; // +1 llamada simple
+}
+
+T(N) = 1+1+2+1+1
+     = 6
+O(N) = 1
+
+Ejercicio 6:
+// O(N)
+bool HasLowHealthPlayer(int[] healhValues)
+{
+      // +1 asignacion, N+1 comparacion, +N incremento
+      for(int i = 0; i < healthValues.Length; i++)
+      {
+            // +1 asignacion, +N acceso
+            int healt = healthValues[i];
+
+            if(healt < 30) // +1 comparacion
+            {
+                  Debug.Log("Low health detected") // +1 llamada simple
+                  return true; // +1 llamada simple
+            }
+      }
+      return false; // +1 llamada simple
+}
+
+T(N) = 1+N+1+N+1+N+1+1+1+1
+     = 3N+7
+O(N) = N
+
+Ejercicio 7:
+// O(N^2)
+int CountStrongerPairs(int[] powerLevels)
+{
+      int count = 0; // +1 asignacion
+
+      // +1 asignacion, +(N+1) comparacion, +N incremento
+      for (int i = 0; i < powerLevels.Length; i++)
+      {
+            for(int j = 0; j < powerLevels.Length; j++) // +1 asignacion, +(N+1) comparacion, +N incremento
+            {
+                  if(powerLevels[i] > powerLevels[j]) // +N acceso, +1 comparacion, +N acceso
+                  {
+                        count++; // +2 asignacion e incremento
+                  }
+            }
+      }
+      return count; // +1  llamada simple
+}
+
+T(N) = for INTERNO: N*(2+N+1+N+1+N+1+N) = N*(4N+5) = 4N^2+5N
+     = for EXTERNO: 1+N+1+N+1+1+4N^2+5N
+     = 11N^2+4
+O(N^2) = N^2
 
 
 
