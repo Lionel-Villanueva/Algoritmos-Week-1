@@ -38,7 +38,7 @@ void ComparePlayers(List<GameObjects>players)
 
 T(N)= for INTERNO: 1+N+1+1+1+N+1+N+1+N = 4N+6 = N(4N+6) = 4N^2+6N
     = suma for EXTERNO: 1+N+1+N+4N^2+6N
-    = 12N^2 + 2
+    = 4N^2+8N+2
 O(N)= N^2
 
 Ejecicio 3:
@@ -63,8 +63,9 @@ int CalculateInteractionsScore(int[] players)
     return score;
 }
 
-T(N) = for Interno: N*(2+1+1+N+1+N+1+N+1+N+1+N) = N*(5N+8) = 5N^2+8N = 13N^2
-     = suma for Externo: 1+1+N+1+N+13N^2 = 15N^2+3
+T(N) = for Interno: N*(2+1+1+N+1+N+1+N+1+N+1+N) = N*(5N+8) = 5N^2+8N
+     = suma for Externo: 1+1+N+1+N+5N^2+8N
+     = 5N^2+10N+3
 O(N) = N^2
 
 Ejercicio 4:
@@ -149,7 +150,7 @@ int CountStrongerPairs(int[] powerLevels)
 
 T(N) = for INTERNO: N*(N+N+1+N+1+N+1+N) = N*(5N+3) = 5N^2+3N
      = for EXTERNO: 1+1+N+1+N+1+5N^2+3N
-     = 10N^2+4
+     = 5N^2+5N+4
 O(N) = N^2
 
 
