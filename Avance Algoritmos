@@ -1,0 +1,70 @@
+Ejercicio 1:
+// Entrada O(N)
+int SumScores(int[] scores)
+{
+   // +1 Por asignacion
+   int sum = 0;
+
+   // +1 Por asignacion, +(N+1) comparaciones, +N incrementos
+   for(int i = 0; i < scores.Length; i++)
+   {
+      // +2 Por Incremento y asignacion, +N Acceso a i
+      sum += scores[i];
+   }
+
+    // +1 Por asignacion
+    return sum;
+}
+
+T(N)= 1+1+N+1+N+2+N+1
+    = 3N+6
+O(N)= N
+
+Ejercicio 2:
+// Entrada O(N)
+void ComparePlayers(List<GameObjects>players)
+{
+    // +1 por asignacion, +(N+1) Comparaciones, +N incrementos
+    for(int i = 0; i < players.Count; i++)
+    {
+        // N*(+1+N+1 por asignacion a variable no fija y incremento, +(N+1) comparacion, +N incrementos)
+        for(int j = i + 1; j < player.Count; j++)
+        {
+            // +1 por llamada simple, +N por acceso a la lista, +1 por imcremento, +1 por incremento
+            Debug.Log(players[i].name + " vs " + ___________);
+        }
+    }
+}
+
+T(N)= for INTERNO: 1+N+1+1+1+N+1+N+1+N = 4N+6 = N(4N+6) = 4N^2+6N
+    = suma for EXTERNO: 1+N+1+N+4N^2+6N
+    = 12N^2 + 2
+O(N)= N^2
+
+Ejecicio 3:
+//Entrada O(N)
+int CalculateInteractionsScore(int[] players)
+{
+    // +1 por asignacion
+    int score = 0;
+    // +1 por asignacion, +(N+1) comparaciones, +N incrementos
+    for (int i = 0; i < players.Length; i++)
+    {
+        //N*(+1+N+1 por asignacion a variable no fija y incremento, +(N+1) comparaciones, +N incrementos)
+        for(int j = i + 1; j < players.Length; j++)
+        {
+            //+1 asignacion, +1 asignacion, +N acceso, +1 incremento, +N acceso
+            int interaction = players[i] + players[j];
+            score += interaction; //+2 incremento y asignacion
+        }
+
+    }
+    //+1 llamada simple
+    return score;
+}
+
+Ejercicio 4:
+
+
+
+
